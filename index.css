@@ -52,7 +52,7 @@ div.logoWriting p{
 .address p.phone{
 	margin: 0;
 	font-size: 17px;
-	color:bisque
+	color:bisque;
 }
 .clear{
 	clear: both;
@@ -70,7 +70,7 @@ div.navbar ul{
 div.navbar ul li{
 	display: inline;
 	padding: inherit;
-	text-align:center
+	text-align:center;
 }
 div.navbar ul li:hover{
 	background-color: aquamarine;
@@ -87,7 +87,7 @@ div.navbar ul li a {
 div.pic h4{
 	margin: 2px;
 	text-align: center;
-	color:bisque
+	color:bisque;
 }
 div.pic p{
 	margin: 8px 2.5%;
@@ -108,24 +108,34 @@ div h3{
 div.aboutUs div div {
 	width: 90%;
 	margin: auto;
+	vertical-align: middle;
+	line-height: normal;
 }
 div.aboutUs div div img{
-	float: left;
 	width: 225px;
 	height: auto;
 	border: 3px solid gold;
-	margin: 10px 10px 10px 10px;
-	clear: both;
+	margin: 10px 10px 30px 10px;
+}
+div.aboutUs div div h4{
+	padding-top: 10px;
+	margin: 0px;
+	color: goldenrod;
 }
 div.aboutUs div div p{
-	width: 500px;
+	margin: 0;
+	color:antiquewhite
+}
+#textMiddle{
+	font-size: 150%;
+	text-align: center;
+	margin-bottom: 5px;
+}
+#right{
 	float: right;
 }
-div.floatRight p{
+#left{
 	float: left;
-}
-div.floatRight img{
-	float: right;
 }
 
 
