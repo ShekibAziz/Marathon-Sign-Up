@@ -157,6 +157,7 @@ label{
 	text-align: center;	
 }
 footer{
+	margin-top:20px;
 	padding-top:50px;
 	background-color: darkslategray;
 	height: 75px;
