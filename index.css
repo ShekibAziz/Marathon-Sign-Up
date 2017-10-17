@@ -94,6 +94,7 @@ div.pic p{
 	color: antiquewhite;
 	font-size: 13px;
 }
+/*About us*/
 div h3{
 	padding: 5px 20px;
    font-family: Chalkduster, fantasy;
@@ -124,7 +125,7 @@ div.aboutUs div div h4{
 }
 div.aboutUs div div p{
 	margin: 0;
-	color:antiquewhite
+	color:antiquewhite;
 }
 #textMiddle{
 	font-size: 150%;
@@ -138,5 +139,28 @@ div.aboutUs div div p{
 	float: left;
 }
 
+/*Sign up Page*/
 
-
+fieldset{
+	margin: auto;
+	width: 80%;
+	border-radius: 8px;
+}
+label{
+	color:palegoldenrod;
+	line-height: 30px;
+}
+#medicalCondition{
+	vertical-align: text-top;
+}
+.buttons{
+	text-align: center;	
+}
+footer{
+	padding-top:50px;
+	background-color: darkslategray;
+	height: 75px;
+	width: 100%;
+	vertical-align: middle;
+	text-align: center;
+}

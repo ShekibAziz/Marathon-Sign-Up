@@ -3,8 +3,10 @@
 
 <head>
    <title> Marathon Man vs Mind </title>
-  <link rel="stylesheet" href="index.css">
-   <meta charset="utf-8">
+  	<link rel="stylesheet" href="index.css">
+  	<script src="js/jquery-3.2.1.min.js"></script>
+  	<script src="index.js"></script>
+  	<meta charset="utf-8">
 </head>
   
     
@@ -64,33 +66,185 @@
 </div>
 		 <div class="signUp">
 		 	<h3 id="signUp">Sign Up</h3>
+<!--	 Runner's image	 	                                    -->
+<!--   First Middle And Last Name                              -->
+<!--   Address, (two lines for address) City, State and Zipcode-->
+<!--   Primary Phone                                           -->
+<!--	 Email Address                                           -->
+<!--	 Gender                                                  -->
+<!--	 Date of Birth                                           -->
+<!--	 Medical Condition(text area)                            -->
+<!--	 Experiance Level(Expert, Experienced, Novice)           -->
+<!--   Category(Teen, Adult,Senior) 								   -->
+<!--	 The php code segment copy from the 000 jadrn (to send it to the server)-->
+	 
 		 </div>
- 
-
-  <div>hi</div>
-  <div>hi</div>
-  <div>hi</div>
-  <div>hi</div>
-  <div>hi</div>
-  <div>hi</div>
-  <div>hi</div>
-  <div>hi</div>
-  <div>hi</div>
-  <div>hi</div>
-  <div>hi</div>
-  <div>hi</div>
-  <div>hi</div>
-  <div>hi</div>
-  <div>hi</div>
-  <div>hi</div>
-  
-  
-    
-     
-      
-       
-        
-         
-           
+		 	<fieldset>
+		 		<legend>Registration Form</legend>
+		 			<form>
+						<label for="firstName">First Name: </label>
+						<input type="text" name="firstName" size=30 id=firstName>
+					
+						<label for="lastName">Last Name:</label>
+						<input type="text" name="lastName" size=30 id=lastName><br>
+						
+						<label for="middleName">Middle Name:</label>
+						<input type="text" name="middleName" size=30 id=middleName><br>
+						
+						<label for="address">Address:</label>
+						<input type="text" name="address" size=80 id=address><br>
+						
+						<label for="city">City:</label>
+						<input type="text" name="city" size=30 id=city>
+						
+						<label for="state">State:</label> 
+						<input type="text" name="state" size=2 id=state>
+						
+						<label for="zipcode">Zipcode:</label>
+						<input type="text" name="zipcode" size=5 id=zipcode><br>
+						
+						<label for="primaryPhone">Primary Phone:</label>
+						<input type="text" name="primaryPhone" size=20 id=primaryPhone><br>
+						
+						<label for="email">Email:</label>
+						<input type="text" name="email" size=5 id=email><br>
+						
+						<label for="gender">Gender:</label>
+						<input type="radio" name="male" size=5 id=male>
+						<label for="male">Male</label>
+						<input type="radio" name="male" size=5 id=male>
+						<label for="female">Female</label><br>
+					
+						
+						<label for="email">Date of Birth:</label>
+						<select name=day id=day>
+<option value='1'>1</option>
+<option value='2'>2</option>
+<option value='3'>3</option>
+<option value='4'>4</option>
+<option value='5'>5</option>
+<option value='6'>6</option>
+<option value='7'>7</option>
+<option value='8'>8</option>
+<option value='9'>9</option>
+<option value='10'>10</option>
+<option value='11'>11</option>
+<option value='12'>12</option>
+<option value='13'>13</option>
+<option value='14'>14</option>
+<option value='15'>15</option>
+<option value='16'>16</option>
+<option value='17'>17</option>
+<option value='18'>18</option>
+<option value='19'>19</option>
+<option value='20'>20</option>
+<option value='21'>21</option>
+<option value='22'>22</option>
+<option value='23'>23</option>
+<option value='24'>24</option>
+<option value='25'>25</option>
+<option value='26'>26</option>
+<option value='27'>27</option>
+<option value='28'>28</option>
+<option value='29'>29</option>
+<option value='30'>30</option>
+<option value='31'>31</option>
+</select>
+							<label for="day">Month</label>
+							<select name=month id=month>
+<option value='1'>1</option>
+<option value='2'>2</option>
+<option value='3'>3</option>
+<option value='4'>4</option>
+<option value='5'>5</option>
+<option value='6'>6</option>
+<option value='7'>7</option>
+<option value='8'>8</option>
+<option value='9'>9</option>
+<option value='10'>10</option>
+<option value='11'>11</option>
+<option value='12'>12</option>
+</select>
+							<label for="month">Month</label>
+							<select name=year id=year>
+<option value='1947'>1947</option>
+<option value='1948'>1948</option>
+<option value='1949'>1949</option>
+<option value='1950'>1950</option>
+<option value='1951'>1951</option>
+<option value='1952'>1952</option>
+<option value='1953'>1953</option>
+<option value='1954'>1954</option>
+<option value='1955'>1955</option>
+<option value='1956'>1956</option>
+<option value='1957'>1957</option>
+<option value='1958'>1958</option>
+<option value='1959'>1959</option>
+<option value='1960'>1960</option>
+<option value='1961'>1961</option>
+<option value='1962'>1962</option>
+<option value='1963'>1963</option>
+<option value='1964'>1964</option>
+<option value='1965'>1965</option>
+<option value='1966'>1966</option>
+<option value='1967'>1967</option>
+<option value='1968'>1968</option>
+<option value='1969'>1969</option>
+<option value='1970'>1970</option>
+<option value='1971'>1971</option>
+<option value='1972'>1972</option>
+<option value='1973'>1973</option>
+<option value='1974'>1974</option>
+<option value='1975'>1975</option>
+<option value='1976'>1976</option>
+<option value='1977'>1977</option>
+<option value='1978'>1978</option>
+<option value='1979'>1979</option>
+<option value='1980'>1980</option>
+<option value='1981'>1981</option>
+<option value='1982'>1982</option>
+<option value='1983'>1983</option>
+<option value='1984'>1984</option>
+<option value='1985'>1985</option>
+<option value='1986'>1986</option>
+<option value='1987'>1987</option>
+<option value='1988'>1988</option>
+<option value='1989'>1989</option>
+<option value='1990'>1990</option>
+<option value='1991'>1991</option>
+<option value='1992'>1992</option>
+<option value='1993'>1993</option>
+</select>
+							<label for="year">Year</label><br>
+<!--						Work on this-->
+						
+						<label for="medicalCondition">Medical Condition:</label>
+						<textarea name="medicalCondition" id="medicalCondition" cols="50" rows="5"></textarea><br>
+						
+						<label for="experianceLevel">Experiance Level:</label>
+						<input type="radio" name="expert" id=expert>
+						<label for="expert">Expert</label>
+						<input type="radio" name="experienced" id=experienced>
+						<label for="experienced">Experienced</label>
+						<input type="radio" name="novice" id=novice>
+						<label for="novice">Novice</label><br>
+						
+						<label for="ageGroup">Age Group:</label>
+						<input type="radio" name="senior" id=senior>
+						<label for="senior">Senior</label>
+						<input type="radio" name="adult" id=adult>
+						<label for="adult">Adult</label>
+						<input type="radio" name="teen" id=teen>
+						<label for="teen">Teen</label>
+						
+						<hr>
+						 <div class=buttons>
+							<input type="reset">
+							<input type="submit" value=Submit>
+						</div>
+					</form>
+					
+		 	</fieldset>
+		 	<footer>Copyright</footer>
 </body>
 </html>
