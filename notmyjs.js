@@ -218,14 +218,14 @@ $(document).ready( function() {
 
    
     $(':submit').on('click', function() {
-        for(var i=0; i < 11; i++)
+        for(var i=0; i < 16; i++)
             elementHandle[i].removeClass("error");
         errorStatusHandle.text("");
         return isValidData();
         });
         
     $(':reset').on('click', function() {
-        for(var i=0; i < 11; i++)
+        for(var i=0; i < 16; i++)
             elementHandle[i].removeClass("error");
         errorStatusHandle.text("");
         });                                       
