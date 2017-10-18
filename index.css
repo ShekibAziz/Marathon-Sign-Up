@@ -156,6 +156,10 @@ label{
 .buttons{
 	text-align: center;	
 }
+#message_line{
+	color:red;
+	padding-bottom: 10px
+}
 footer{
 	margin-top:20px;
 	padding-top:50px;
