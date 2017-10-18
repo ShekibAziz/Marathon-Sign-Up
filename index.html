@@ -7,6 +7,7 @@
   	<link rel="stylesheet" href="index.css">
   	<script src="js/jquery-3.2.1.min.js"></script>
   	<script src="notmyjs.js"></script>
+  	<sc></sc>
 </head>
   
     
@@ -81,8 +82,8 @@
 		 </div>
 		 	<fieldset>
 		 		<legend>Registration Form</legend>
-		 			<form >
-						<label for="firstNameS">First Name:* </label>
+		 			<form name="customer" enctype="multipart/form-data" method="post" action="echo.php">
+						<label for="firstName">First Name:* </label>
 						<input type="text" name="firstName" size=30 id="firstName" >
 					
 						<label for="lastName">Last Name:*</label>
