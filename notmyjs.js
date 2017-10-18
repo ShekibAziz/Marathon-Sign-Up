@@ -5,7 +5,13 @@
 */    
 
 /////////////////////////////////////////////////////////////////
-    
+    	
+	 function isChecked(){
+		 return ($('[name="gender"]:checked').val() == "male" || $('[name="gender"]:checked').val() == "female");
+	 }
+
+
+
     function isEmpty(fieldValue) {
         return $.trim(fieldValue).length == 0;    
         } 
@@ -43,7 +49,7 @@ $(document).ready( function() {
     elementHandle[8] = $('[name="prefix_phone"]');
     elementHandle[9] = $('[name="phone"]');
     elementHandle[10] = $('[name="email"]');
-	 elementHandle[11] = $('[name="gender"]:checked').val();
+	 elementHandle[11] = $('[name="gender"]');
 	 elementHandle[12] = $('#month').val() +"/"+ $('#day').val() +"/"+ $('#year').val();
 	 elementHandle[13] = $('[name="medicalCondition"]');
 	 elementHandle[14] = $('[name="experianceLevel"]:checked').val();
@@ -174,7 +180,13 @@ $(document).ready( function() {
             errorStatusHandle.text("The email address appears to be invalid,");
             elementHandle[10].focus();            
             return false;
-            }                                                                       
+            }     
+		  if(!isChecked()) {
+            elementHandle[11].addClass("error");
+            errorStatusHandle.text("Please select your gender");
+            elementHandle[11].focus();            
+            return false;
+            }    
         return true;
         }       
 
@@ -218,14 +230,14 @@ $(document).ready( function() {
 
    
     $(':submit').on('click', function() {
-        for(var i=0; i < 16; i++)
+        for(var i=0; i < 11; i++)
             elementHandle[i].removeClass("error");
         errorStatusHandle.text("");
         return isValidData();
         });
         
     $(':reset').on('click', function() {
-        for(var i=0; i < 16; i++)
+        for(var i=0; i < 11; i++)
             elementHandle[i].removeClass("error");
         errorStatusHandle.text("");
         });                                       
