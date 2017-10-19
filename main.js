@@ -1,10 +1,8 @@
-/*  form.js
-    An example of javascript for validating a form.
-    Alan Riggins
-    CS545 Fall 2017
-*/    
-
-/////////////////////////////////////////////////////////////////
+//		  Aziz, Shekib
+//      jadrn004
+//      Project #2
+//      Fall 2017
+ 
 	// Checks if date entered is valid. format: mm/dd/yyyy
 	function isValidDate(dateString)
 	{
@@ -32,9 +30,9 @@
 		 return day > 0 && day <= monthLength[month - 1];
 	}
 
-
 	 function checkGender(){
-		 return ($('[name="gender"]:checked').val() == "male" || $('[name="gender"]:checked').val() == "female");
+		 return ($('[name="gender"]:checked').val() == "male" || 
+					$('[name="gender"]:checked').val() == "female");
 	 }
 	
 	 function checkExperiance(){
@@ -48,8 +46,6 @@
 				  $('[name="ageGroup"]:checked').val() == "adult" ||
 				  $('[name="ageGroup"]:checked').val() == "teen" );
 	}
-
-
 
     function isEmpty(fieldValue) {
         return $.trim(fieldValue).length == 0;    
@@ -67,7 +63,7 @@
         return false;
         }  
         
-    // copied from stackoverflow.com, not checked or validated for correctness.        
+    // copied from stackoverflow.com,         
     function isValidEmail(emailAddress) {
         var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
         return pattern.test(emailAddress);
@@ -91,34 +87,15 @@ $(document).ready( function() {
 	 elementHandle[11] = $('[name="gender"]');
 	 elementHandle[12] = $('[name="DOB"]');
 	 elementHandle[13] = $('[name="medicalCondition"]');
-	 elementHandle[14] = $('[name="experianceLevel"]:checked');
-	 elementHandle[15] = $('[name="ageGroup"]:checked');
+	 elementHandle[14] = $('[name="experianceLevel"]');
+	 elementHandle[15] = $('[name="ageGroup"]');
 	 elementHandle[16] = $('input[name="user_pic"]');
 	
-	
 	var size=0;
-
 	$(elementHandle[16]).on('change',function(e) {
 		size = this.files[0].size;
 	});
-	
-	
-//	$(':submit').on('click', function() {
-//	if(size == 0) 
-//	{
-//		alert("Please select a file");
-//		return;
-//	}
-//	if(size/1000 > 1000)
-//	{
-//		alert("File is too big, 1 MB max");
-//		return; 
-//	}
-//	alert("File is OK to upload");
-//	});
-//	
-	
-	
+		
     function isValidData() {
         if(isEmpty(elementHandle[0].val())) {
             elementHandle[0].addClass("error");
@@ -285,19 +262,18 @@ $(document).ready( function() {
         }       
 
    elementHandle[0].focus();
-   
-   
 /////// HANDLERS
 
 // on blur, if the user has entered valid data, the error message
 // should no longer show.
-    elementHandle[0].on('blur', function() {
-        if(isEmpty(elementHandle[0].val()))
+	for(var i=0; i < 16; i++) {
+    elementHandle[i].on('blur', function() {
+        if(isEmpty(elementHandle[i].val()))
             return;
         $(this).removeClass("error");
         errorStatusHandle.text("");
         });
-        
+	}
     elementHandle[10].on('blur', function() {
         if(isEmpty(elementHandle[10].val()))
             return;
@@ -305,7 +281,41 @@ $(document).ready( function() {
             $(this).removeClass("error");
             errorStatusHandle.text("");
             }
-        });        
+        }); 
+	 elementHandle[11].on('blur', function() {
+        if(!checkGender())
+            return;
+        if(checkGender()) {
+            $(this).removeClass("error");
+            errorStatusHandle.text("");
+            }
+        }); 
+	
+	elementHandle[12].on('blur', function() {
+        if(isValidDate())
+            return;
+        if(!isValidDate()) {
+            $(this).removeClass("error");
+            errorStatusHandle.text("");
+            }
+        });
+	elementHandle[14].on('blur', function() {
+        if(!checkExperiance())
+            return;
+        if(checkExperiance()) {
+            $(this).removeClass("error");
+            errorStatusHandle.text("");
+            }
+        }); 
+	elementHandle[15].on('blur', function() {
+        if(!checkAgeGroup())
+            return;
+        if(checkAgeGroup()) {
+            $(this).removeClass("error");
+            errorStatusHandle.text("");
+            }
+        });
+	
 /////////////////////////////////////////////////////////////////        
 
     elementHandle[5].on('keyup', function() {
@@ -322,7 +332,6 @@ $(document).ready( function() {
             elementHandle[9].focus();
             });            
 
-   
     $(':submit').on('click', function() {
         for(var i=0; i < 11; i++)
             elementHandle[i].removeClass("error");

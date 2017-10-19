@@ -4,12 +4,17 @@
 <head>
    <title> Marathon Man vs Mind </title>
    <meta charset="utf-8">
-  	<link rel="stylesheet" href="index.css">
+  	<link rel="stylesheet" href="main.css">
   	<script src="js/jquery-3.2.1.min.js"></script>
-  	<script src="notmyjs.js"></script>
+  	<script src="main.js"></script>
   	<sc></sc>
 </head>
-  
+<!--
+  		Aziz, Shekib
+      jadrn004
+      Project #2
+      Fall 2017
+-->
     
 <body>
 	<header>
@@ -67,23 +72,12 @@
 </div>
 		 <div class="signUp">
 		 	<h3 id="signUp">Sign Up</h3>
-<!--	 Runner's image	 	                                    -->
-<!--   First Middle And Last Name                              -->
-<!--   Address, (two lines for address) City, State and Zipcode-->
-<!--   Primary Phone                                           -->
-<!--	 Email Address                                           -->
-<!--	 Gender                                                  -->
-<!--	 Date of Birth                                           -->
-<!--	 Medical Condition(text area)                            -->
-<!--	 Experiance Level(Expert, Experienced, Novice)           -->
-<!--   Category(Teen, Adult,Senior) 								   -->
-<!--	 The php code segment copy from the 000 jadrn (to send it to the server)-->
 	 
 		 </div>
 		 	<fieldset>
 		 		<legend>Registration Form</legend>
-<!--		 			<form name="customer" enctype="multipart/form-data" method="post" action="echo.php">  -->
-						<form>
+						<form name="customer" enctype="multipart/form-data" method="post" action="echo.php">
+						
 						<label for="firstName">First Name:* </label>
 						<input type="text" name="firstName" size=30 id="firstName" >
 					
@@ -103,7 +97,7 @@
 						<input type="text" name="state" size=7 id=state>
 						
 						<label for="zipcode">Zipcode:*</label>
-						<input type="text" name="zipcode" size=10 id=zipcode><br>
+						<input type="text" name="zipcode" size=10 id=zipcode maxlength="5"><br>
 						
 						<label for="primaryPhone">Primary Phone*:</label>
 						(<input type="text" name="area_phone" size="5" maxlength="3" />)  
@@ -123,7 +117,7 @@
 						<input type="text" name="DOB" size=15 placeholder="mm/dd/yyyy" maxlength="10"><br> 
 						
 						<label for="medicalCondition">Medical Condition:</label>
-						<textarea name="medicalCondition" id="medicalCondition" cols="50" rows="5"></textarea><br>
+							<textarea name="medicalCondition" id="medicalCondition" cols="50" rows="5"></textarea><br>
 						
 						<label for="experianceLevel">Experiance Level:*</label>
 						<input type="radio" name="experianceLevel" value=expert id=expert>
@@ -143,8 +137,7 @@
 						
 						<label for="userPic">Add a picture</label>
 						<input type="file" name="user_pic" accept="image/*" />
-<!--   				 	<input type="button" id="fbutton" value="validate" />-->
-						
+
 						<hr>
 						 <div class=buttons>
 						 <div id="message_line">&nbsp;</div>
