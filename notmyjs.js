@@ -6,9 +6,21 @@
 
 /////////////////////////////////////////////////////////////////
     	
-	 function isChecked(){
+	 function checkGender(){
 		 return ($('[name="gender"]:checked').val() == "male" || $('[name="gender"]:checked').val() == "female");
 	 }
+	
+	 function checkExperiance(){
+		return ($('[name="experianceLevel"]:checked').val() == "expert" ||
+				  $('[name="experianceLevel"]:checked').val() == "experienced" ||
+				  $('[name="experianceLevel"]:checked').val() == "novice" );
+	 }
+		
+	function checkAgeGroup(){
+		return ($('[name="ageGroup"]:checked').val() == "senior" ||
+				  $('[name="ageGroup"]:checked').val() == "adult" ||
+				  $('[name="ageGroup"]:checked').val() == "teen" );
+	}
 
 
 
@@ -52,8 +64,8 @@ $(document).ready( function() {
 	 elementHandle[11] = $('[name="gender"]');
 	 elementHandle[12] = $('#month').val() +"/"+ $('#day').val() +"/"+ $('#year').val();
 	 elementHandle[13] = $('[name="medicalCondition"]');
-	 elementHandle[14] = $('[name="experianceLevel"]:checked').val();
-	 elementHandle[15] = $('[name="ageGroup"]:checked').val();
+	 elementHandle[14] = $('[name="experianceLevel"]:checked');
+	 elementHandle[15] = $('[name="ageGroup"]:checked');
 	
     function isValidData() {
         if(isEmpty(elementHandle[0].val())) {
@@ -181,12 +193,24 @@ $(document).ready( function() {
             elementHandle[10].focus();            
             return false;
             }     
-		  if(!isChecked()) {
+		  if(!checkGender()) {
             elementHandle[11].addClass("error");
             errorStatusHandle.text("Please select your gender");
             elementHandle[11].focus();            
             return false;
-            }    
+            } 
+		 	if(!checkExperiance()) {
+				elementHandle[14].addClass("error");
+				errorStatusHandle.text("Please select your experiance level");
+				elementHandle[14].focus();
+				return false;
+			}
+			if(!checkAgeGroup()) {
+				elementHandle[15].addClass("error");
+				errorStatusHandle.text("Please select your age group");
+				elementHandle[15].focus();
+				return false;
+			} 
         return true;
         }       
 
