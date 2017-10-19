@@ -5,7 +5,34 @@
 */    
 
 /////////////////////////////////////////////////////////////////
-    	
+	// Checks if date entered is valid. format: mm/dd/yyyy
+	function isValidDate(dateString)
+	{
+		 // First check for the pattern
+		 if(!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(dateString))
+			  return false;
+
+		 // Parse the date parts to integers
+		 var parts = dateString.split("/");
+		 var day = parseInt(parts[1], 10);
+		 var month = parseInt(parts[0], 10);
+		 var year = parseInt(parts[2], 10);
+
+		 // Check the ranges of month and year
+		 if(year < 1990 || year > 2016 || month == 0 || month > 12)
+			  return false;
+
+		 var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+
+		 // Adjust for leap years
+		 if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
+			  monthLength[1] = 29;
+
+		 // Check the range of the day
+		 return day > 0 && day <= monthLength[month - 1];
+	}
+
+
 	 function checkGender(){
 		 return ($('[name="gender"]:checked').val() == "male" || $('[name="gender"]:checked').val() == "female");
 	 }
@@ -62,7 +89,7 @@ $(document).ready( function() {
     elementHandle[9] = $('[name="phone"]');
     elementHandle[10] = $('[name="email"]');
 	 elementHandle[11] = $('[name="gender"]');
-	 elementHandle[12] = $('#month').val() +"/"+ $('#day').val() +"/"+ $('#year').val();
+	 elementHandle[12] = $('[name="DOB"]');
 	 elementHandle[13] = $('[name="medicalCondition"]');
 	 elementHandle[14] = $('[name="experianceLevel"]:checked');
 	 elementHandle[15] = $('[name="ageGroup"]:checked');
@@ -199,6 +226,12 @@ $(document).ready( function() {
             elementHandle[11].focus();            
             return false;
             } 
+		  if(!isValidDate(elementHandle[12].val())) {
+				elementHandle[12].addClass("error");
+				errorStatusHandle.text("Please enter valid date of birth");
+				elementHandle[12].focus();
+				return false;
+			}
 		 	if(!checkExperiance()) {
 				elementHandle[14].addClass("error");
 				errorStatusHandle.text("Please select your experiance level");
