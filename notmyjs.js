@@ -93,6 +93,31 @@ $(document).ready( function() {
 	 elementHandle[13] = $('[name="medicalCondition"]');
 	 elementHandle[14] = $('[name="experianceLevel"]:checked');
 	 elementHandle[15] = $('[name="ageGroup"]:checked');
+	 elementHandle[16] = $('input[name="user_pic"]');
+	
+	
+	var size=0;
+
+	$(elementHandle[16]).on('change',function(e) {
+		size = this.files[0].size;
+	});
+	
+	
+//	$(':submit').on('click', function() {
+//	if(size == 0) 
+//	{
+//		alert("Please select a file");
+//		return;
+//	}
+//	if(size/1000 > 1000)
+//	{
+//		alert("File is too big, 1 MB max");
+//		return; 
+//	}
+//	alert("File is OK to upload");
+//	});
+//	
+	
 	
     function isValidData() {
         if(isEmpty(elementHandle[0].val())) {
@@ -244,6 +269,18 @@ $(document).ready( function() {
 				elementHandle[15].focus();
 				return false;
 			} 
+		 	if(size == 0) {
+				elementHandle[16].addClass("error");
+				errorStatusHandle.text("Please select a file");
+				elementHandle[16].focus();
+				return false;
+				}
+		 	 if(size/1000 > 1000) {
+				elementHandle[16].addClass("error");
+				errorStatusHandle.text("File is too big, 1 MB max");
+				elementHandle[16].focus();
+				return false;
+				}
         return true;
         }       
 
