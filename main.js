@@ -71,7 +71,7 @@
                    
 $(document).ready( function() {
     var errorStatusHandle = $('#message_line');
-    var elementHandle = new Array(16);
+    var elementHandle = new Array(17);
 	
     elementHandle[0] = $('[name="firstName"]');
     elementHandle[1] = $('[name="lastName"]');
@@ -262,18 +262,66 @@ $(document).ready( function() {
         }       
 
    elementHandle[0].focus();
-/////// HANDLERS
-
+	
 // on blur, if the user has entered valid data, the error message
 // should no longer show.
-	for(var i=0; i < 16; i++) {
-    elementHandle[i].on('blur', function() {
-        if(isEmpty(elementHandle[i].val()))
-            return;
-        $(this).removeClass("error");
-        errorStatusHandle.text("");
-        });
-	}
+	 elementHandle[0].on('blur', function() {
+		  if(isEmpty(elementHandle[0].val()))
+				return;
+		  $(this).removeClass("error");
+		  errorStatusHandle.text("");
+	 });
+	elementHandle[1].on('blur', function() {
+		  if(isEmpty(elementHandle[1].val()))
+				return;
+		  $(this).removeClass("error");
+		  errorStatusHandle.text("");
+	 });
+	elementHandle[3].on('blur', function() {
+		  if(isEmpty(elementHandle[3].val()))
+				return;
+		  $(this).removeClass("error");
+		  errorStatusHandle.text("");
+	 });
+	elementHandle[4].on('blur', function() {
+		  if(isEmpty(elementHandle[4].val()))
+				return;
+		  $(this).removeClass("error");
+		  errorStatusHandle.text("");
+	 });
+	elementHandle[5].on('blur', function() {
+		  if(isEmpty(elementHandle[5].val()))
+				return;
+		  $(this).removeClass("error");
+		  errorStatusHandle.text("");
+	 });
+	elementHandle[6].on('blur', function() {
+		  if(isEmpty(elementHandle[6].val()))
+				return;
+		  $(this).removeClass("error");
+		  errorStatusHandle.text("");
+	 });
+	elementHandle[7].on('blur', function() {
+		  if(isEmpty(elementHandle[7].val()))
+				return;
+		  $(this).removeClass("error");
+		  errorStatusHandle.text("");
+	 });
+	elementHandle[8].on('blur', function() {
+		  if(isEmpty(elementHandle[8].val()))
+				return;
+		  $(this).removeClass("error");
+		  errorStatusHandle.text("");
+	 });
+	elementHandle[8].on('blur', function() {
+		  if(isEmpty(elementHandle[8].val()))
+				return;
+		  $(this).removeClass("error");
+		  errorStatusHandle.text("");
+	 });
+	
+	
+	
     elementHandle[10].on('blur', function() {
         if(isEmpty(elementHandle[10].val()))
             return;
@@ -314,9 +362,7 @@ $(document).ready( function() {
             $(this).removeClass("error");
             errorStatusHandle.text("");
             }
-        });
-	
-/////////////////////////////////////////////////////////////////        
+        });       
 
     elementHandle[5].on('keyup', function() {
         elementHandle[5].val(elementHandle[5].val().toUpperCase());
